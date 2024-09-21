@@ -33,7 +33,7 @@ return {
     },
 
     templates = {
-      folder = 'templates',
+      folder = 'Templates',
       date_format = '%Y-%m-%d',
       time_format = '%H:%M',
       -- A map for custom variables, the key should be the variable and the value a function
@@ -119,7 +119,7 @@ return {
       -- The default folder to place images in via `:ObsidianPasteImg`.
       -- If this is a relative path it will be interpreted as relative to the vault root.
       -- You can always override this per image by passing a full path to the command instead of just a filename.
-      img_folder = 'assets/imgs', -- This is the default
+      img_folder = 'Assets/imgs', -- This is the default
 
       -- A function that determines the text to insert in the note when pasting an image.
       -- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.

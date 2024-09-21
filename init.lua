@@ -156,6 +156,9 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+--
+-- force conceal level for markdown rendering
+vim.opt_local.conceallevel = 1
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -320,7 +323,7 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>h', group = '[H]arpoon', mode = { 'n' } },
       },
     },
   },
@@ -797,6 +800,19 @@ require('lazy').setup({
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
+    config = function()
+      require('catppuccin').setup {
+        markdown = true,
+        render_markdown = true,
+        noice = true,
+        which_key = true,
+        indent_blankline = {
+          enabled = true,
+          scope_color = 'pink', -- catppuccin color (eg. `lavender`) Default: text
+          colored_indent_levels = false,
+        },
+      }
+    end,
   },
 
   -- Highlight todo, notes, etc in comments
@@ -910,6 +926,9 @@ require('lazy').setup({
 })
 -- custom keymaps
 require 'custom.keymaps'
+
+-- custom configs
+require 'custom.configs'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
