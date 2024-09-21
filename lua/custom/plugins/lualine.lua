@@ -11,7 +11,7 @@ local function custom_lua_line()
         { 'mode', separator = { left = '' }, right_padding = 1 },
       },
       lualine_b = { 'branch', 'diagnostics', 'searchcount', 'selectioncount' },
-      lualine_c = { 'buffers' },
+      lualine_c = {},
       lualine_x = {},
       lualine_y = { 'filetype', 'diff' },
       lualine_z = {
