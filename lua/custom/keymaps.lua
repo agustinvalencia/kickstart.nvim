@@ -1,7 +1,9 @@
 -- Oil
+-- files navigation
 vim.keymap.set('n', '<leader>wf', require('oil').open_float, { desc = '[W]orkspace [F]ile Explorer' })
 
 -- Harpoon
+-- fast management of marks
 local harpoon = require 'harpoon'
 
 vim.keymap.set('n', '<leader>ha', function()
@@ -35,3 +37,7 @@ end, { desc = '[H]arpoon go to previous' })
 vim.keymap.set('n', '<leader>hl', function()
   harpoon:list():next()
 end, { desc = '[H]arpoon go to next' })
+
+-- Aerial
+-- shows code symbols in a separate pane
+vim.keymap.set('n', '<leader>cs', '<cmd>AerialToggle!<cr>', { desc = '[C]ode [S]ymbols' })
