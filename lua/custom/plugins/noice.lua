@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  return {}
+end
+
 return {
   {
     'folke/noice.nvim',
@@ -5,7 +9,7 @@ return {
     vscode = false,
     opts = {
       presets = {
-        command_palette = true,
+        -- command_palette = true,
       },
       cmdline = {
         enabled = true, -- enables the Noice cmdline UI
@@ -27,12 +31,23 @@ return {
           -- lua = false, -- to disable a format, set to `false`
         },
       },
+      popupmenu = { enabled = true },
       messages = { enabled = false },
-      popupmenu = { enabled = false },
-      notify = { enabled = false },
+      notify = { enabled = true },
       lsp = { enabled = false },
       hover = { enabled = false },
       signature = { enabled = false },
+      views = {
+        cmdline_popup = { position = { row = '40%', col = '50%' }, border = { style = 'rounded', padding = { 1, 2 } } },
+        popupmenu = {
+          relative = 'editor',
+          position = { row = '50%', col = '50%' },
+          -- border = { style = 'rounded', padding = { 0, 1 } },
+          win_options = {
+            winhighlight = { Normal = 'Normal', FloatBorder = 'DiagnosticInfo' },
+          },
+        },
+      },
     },
   },
 }
