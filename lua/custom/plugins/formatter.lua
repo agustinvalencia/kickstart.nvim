@@ -41,6 +41,9 @@ return { -- Autoformat
 
       css = { 'prettier' },
       sh = { 'shfmt' },
+      python = { 'ruff' },
+      typescript = { 'prettier' },
+      javascript = { 'prettier' },
     },
   },
 }

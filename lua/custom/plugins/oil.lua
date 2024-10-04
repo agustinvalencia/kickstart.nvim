@@ -16,6 +16,14 @@ return {
       -- preview_split: Split direction: "auto", "left", "right", "above", "below".
       preview_split = 'right',
     },
+    view_options = {
+      -- Show files and directories that start with "."
+      show_hidden = true,
+      -- This function defines what is considered a "hidden" file
+      is_hidden_file = function(name, bufnr)
+        return vim.startswith(name, '.')
+      end,
+    },
     preview = {
       -- Width dimensions can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
       -- min_width and max_width can be a single value or a list of mixed integer/float types.
