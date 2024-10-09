@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  return {}
+end
+
 return {
   '3rd/image.nvim',
   event = 'VeryLazy',
@@ -7,6 +11,7 @@ return {
     { 'nvim-treesitter/nvim-treesitter', lazy = true },
   },
   opts = {
+    backend = 'kitty',
     max_width = nil,
     max_height = nil,
     max_width_window_percentage = nil,
