@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  return {}
+end
+
 local function custom_lua_line()
   return {
     options = {
@@ -10,10 +14,29 @@ local function custom_lua_line()
       lualine_a = {
         { 'mode', separator = { left = '' }, right_padding = 1 },
       },
-      lualine_b = { 'branch', 'diagnostics', 'searchcount', 'selectioncount' },
+      -- lualine_b = { 'branch', 'diagnostics', 'searchcount', 'selectioncount' },
+      lualine_b = {
+        {
+          'filename',
+          path = 1, -- 1: Relative path
+          shorting_target = 40, -- Shortens the path if it's longer than 40 characters
+          symbols = {
+            modified = ' ', -- Text to show when the buffer is modified
+            readonly = ' ', -- Text to show when the buffer is read-only
+            unnamed = '[No Name]', -- Text to show for unnamed buffers
+          },
+        },
+      },
       lualine_c = {},
-      lualine_x = {},
-      lualine_y = { 'filetype', 'diff' },
+      lualine_x = {
+        {
+          function()
+            return 'Buffers: ' .. #vim.fn.getbufinfo { buflisted = 1 }
+          end,
+          icon = ' ', -- Icon to represent buffers
+        },
+      },
+      lualine_y = { 'filetype' },
       lualine_z = {
         { 'filename', separator = { right = '' }, left_padding = 1 },
       },

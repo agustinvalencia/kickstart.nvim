@@ -1,3 +1,6 @@
+if vim.g.vscode then
+  return {}
+end
 return {
   'stevearc/aerial.nvim',
   opts = {},

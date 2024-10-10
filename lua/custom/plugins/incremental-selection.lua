@@ -1,3 +1,6 @@
+if vim.g.vscode then
+  return {}
+end
 return {
   'sustech-data/wildfire.nvim',
   event = 'VeryLazy',

@@ -1,3 +1,6 @@
+if vim.g.vscode then
+  return {}
+end
 -- this was moved from init.lua
 return { -- Autoformat
   'stevearc/conform.nvim',

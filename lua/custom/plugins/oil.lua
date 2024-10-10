@@ -4,10 +4,8 @@ end
 
 return {
   'stevearc/oil.nvim',
-  opts = {},
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  setup = {
-    default_file_explorer = true,
+  opts = {
     columns = { 'icon' },
     float = {
       padding = 5,
