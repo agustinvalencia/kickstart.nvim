@@ -48,7 +48,7 @@ if not vim.g.vscode then
   vim.keymap.set('n', '<leader>on', '<cmd>ObsidianNewFromTemplate<cr>', { desc = '[O]bsidian [N]ew from Template' })
 
   --Custom diagnostics
-  vim.keymap.set('n', '<leader>df', '<cmd>vim.diagnostics.open_float()<cr>', { desc = '[D]iagnostics [F]ull' })
+  vim.keymap.set('n', '<leader>cdf', vim.diagnostic.open_float, { desc = '[C]ode [D]iagnostics [F]ull' })
 else
   local keymap = vim.keymap.set
   local opts = { noremap = true, silent = true }
